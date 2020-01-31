@@ -1,0 +1,134 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    tools:context=".Activity_item_view_1"
+    android:background="#9900ff"
+    >
+
+
+    <de.hdodenhof.circleimageview.CircleImageView
+        android:id="@+id/imgPerfilItemView"
+        android:layout_width="48dp"
+        android:layout_height="48dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginStart="5dp"
+        android:background="@drawable/btnredondo"
+        tools:ignore="ContentDescription"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/usernameItemView"
+        app:layout_constraintBottom_toTopOf="@+id/txtDescricaoItemView"
+        />
+
+    <TextView
+        android:id="@+id/usernameItemView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textColor="#ffffff"
+        android:textSize="16sp"
+        android:textStyle="bold"
+        android:text="@string/usuario"
+        app:layout_constraintStart_toEndOf="@id/imgPerfilItemView"
+        app:layout_constraintTop_toTopOf="@id/imgPerfilItemView"
+        app:layout_constraintBottom_toTopOf="@id/cidadeItemView"
+        android:layout_marginStart="2dp"
+
+        />
+
+    <TextView
+        android:textColor="#bbbbbb"
+        android:id="@+id/cidadeItemView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/cidade_uf"
+        app:layout_constraintStart_toStartOf="@id/usernameItemView"
+        app:layout_constraintTop_toBottomOf="@id/usernameItemView"
+        app:layout_constraintBottom_toTopOf="@+id/timeItemView"
+        android:layout_marginBottom="5dp"
+        android:layout_marginTop="2dp"
+        />
+
+    <TextView
+        android:id="@+id/timeItemView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textColor="#888888"
+        android:textSize="18sp"
+        tools:text="há 0 dias"
+        app:layout_constraintStart_toStartOf="@id/cidadeItemView"
+        app:layout_constraintTop_toBottomOf="@id/cidadeItemView"
+        app:layout_constraintEnd_toEndOf="@id/cidadeItemView"
+        app:layout_constraintBottom_toTopOf="@id/txtDescricaoItemView"
+        />
+
+
+    <TextView
+        android:id="@+id/txtDescricaoItemView"
+        android:layout_width="match_parent"
+        android:layout_height="150dp"
+        android:padding="10dp"
+        android:textColor="@android:color/white"
+        app:layout_constraintTop_toBottomOf="@id/imgPerfilItemView"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="20dp"
+        tools:ignore="ContentDescription" />
+
+
+    <TextView
+        android:id="@+id/txtTitleItemView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/titulo"
+        android:textColor="#ffffff"
+        android:textSize="18sp"
+        app:layout_constraintStart_toStartOf="@+id/txtDescricaoItemView"
+        app:layout_constraintTop_toBottomOf="@+id/txtDescricaoItemView"
+        app:layout_constraintEnd_toStartOf="@+id/btnLikeItemView1"
+        app:layout_constraintBottom_toBottomOf="parent" />
+
+    <ImageButton
+        android:id="@+id/btnLikeItemView1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@android:color/white"
+        android:src="@drawable/ic_favorite_black_24dp"
+        android:tint="#ffffff"
+        android:backgroundTint="#9900ff"
+        app:layout_constraintStart_toEndOf="@+id/txtTitleItemView"
+        app:layout_constraintEnd_toStartOf="@+id/btnSaveItemVIew"
+        app:layout_constraintTop_toTopOf="@+id/txtTitleItemView"
+        app:layout_constraintBottom_toBottomOf="@+id/txtTitleItemView"
+        android:layout_marginStart="100dp"
+        />
+
+    <ImageButton
+        android:id="@+id/btnSaveItemVIew"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:background="@android:color/white"
+        android:backgroundTint="#9900ff"
+        android:src="@drawable/ic_save_black_24dp"
+        app:layout_constraintStart_toEndOf="@+id/btnLikeItemView1"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/btnLikeItemView1"
+        app:layout_constraintBottom_toBottomOf="@+id/btnLikeItemView1"
+        android:tint="#ffffff"
+        android:layout_marginStart="10dp"
+        />
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="30dp"
+        android:background="@android:color/white"
+        app:layout_constraintTop_toBottomOf="@+id/btnSaveItemVIew"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        />
+
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,0 +1,178 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Activity_Add_Ideia"
+    android:background="#9900ff"
+    >
+    <TextView
+        android:id="@+id/txtAddNovaIdeia"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:text="Publicar Nova Ideia"
+        android:textSize="10pt"
+        android:textStyle="bold"
+        android:textColor="@android:color/white"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toTopOf="@id/imgUserAddNovaIdeia"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+
+    <de.hdodenhof.circleimageview.CircleImageView
+        android:id="@+id/imgUserAddNovaIdeia"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        app:layout_constraintStart_toStartOf="@+id/txtTituloAddIdeia"
+        app:layout_constraintTop_toBottomOf="@+id/txtAddNovaIdeia"
+        app:layout_constraintBottom_toTopOf="@id/txtTituloAddIdeia"
+        android:layout_marginTop="8dp"
+        android:layout_marginBottom="8dp"
+        android:layout_marginStart="16dp"
+         />
+
+    <TextView
+        app:layout_constraintTop_toTopOf="@+id/imgUserAddNovaIdeia"
+        app:layout_constraintStart_toEndOf="@+id/imgUserAddNovaIdeia"
+        app:layout_constraintBottom_toBottomOf="@+id/imgUserAddNovaIdeia"
+        android:id="@+id/txtNomeUsuarioAddIdeia"
+        android:layout_marginStart="5dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/nome_de_usuario"
+        android:textStyle="bold"
+        android:textColor="@android:color/white"
+        />
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/txtTituloAddIdeia"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toTopOf="@+id/txtDescricaoAddIdeia"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/imgUserAddNovaIdeia"
+        android:textColorHint="#ffffff"
+        app:counterEnabled="true"
+        app:counterMaxLength="30"
+
+        >
+    <EditText
+        android:textColorLink="#ffffff"
+        android:id="@+id/txtTituloAdd"
+        android:hint="Titulo"
+        android:layout_width="350dp"
+        android:layout_height="wrap_content"
+        android:textColor="#ffffff"
+        android:textColorHint="#ffffff"
+        android:textSize="24sp"
+        android:inputType="text" />
+
+    </com.google.android.material.textfield.TextInputLayout>
+
+
+<com.google.android.material.textfield.TextInputLayout
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    app:layout_constraintEnd_toEndOf="parent"
+    app:layout_constraintBottom_toTopOf="@+id/txtWhastAppAddIdeia"
+    app:layout_constraintStart_toStartOf="parent"
+    app:layout_constraintTop_toBottomOf="@+id/txtTituloAddIdeia"
+    android:id="@+id/txtDescricaoAddIdeia"
+    android:textColorHint="#ffffff"
+    app:counterEnabled="true"
+    app:counterMaxLength="300"
+    app:hintEnabled="true"
+    >
+
+    <EditText
+        android:id="@+id/txtDescricaoAddIdei"
+        android:padding="2dp"
+        android:layout_width="350dp"
+        android:layout_height="100dp"
+        android:background="@android:color/white"
+        android:inputType="textMultiLine"
+
+        />
+</com.google.android.material.textfield.TextInputLayout>
+    <com.google.android.material.textfield.TextInputLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/txtWhastAppAddIdeia"
+        app:layout_constraintEnd_toStartOf="@id/txtEmailAddIdeia"
+        app:layout_constraintBottom_toBottomOf="@id/txtEmailAddIdeia"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@id/txtEmailAddIdeia"
+        android:textColorHint="#ffffff"
+        android:hint="WhastApp"
+
+        >
+
+    <com.santalu.maskedittext.MaskEditText
+        android:id="@+id/txtWhastAppAddIdei"
+        android:layout_width="150dp"
+        android:layout_height="40dp"
+        android:textColor="#ffffff"
+        android:textColorHint="@android:color/white"
+        android:inputType="phone"
+        android:textAlignment="viewStart"
+        android:imeOptions="actionNext"
+        app:met_mask="(##)#####-####"
+
+        />
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@id/txtWhastAppAddIdeia"
+        app:layout_constraintBottom_toTopOf="@id/imgIdeiaAddIdeia"
+        app:layout_constraintTop_toBottomOf="@id/txtDescricaoAddIdeia"
+        android:id="@+id/txtEmailAddIdeia"
+        android:textColorHint="#ffffff"
+
+        >
+
+    <EditText
+        android:hint="email@email.com"
+        android:id="@+id/txtEmailAddIdei"
+        android:layout_width="200dp"
+        android:layout_height="40dp"
+        android:inputType="textEmailAddress"
+        android:textColor="@android:color/white"
+        android:textColorHint="#ffffff"
+
+
+        />
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <ImageButton
+        android:id="@+id/imgIdeiaAddIdeia"
+        app:layout_constraintTop_toBottomOf="@+id/txtEmailAddIdeia"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_width="350dp"
+        android:layout_height="200dp"
+        android:background="#00ffffff"
+        app:layout_constraintBottom_toTopOf="@id/btnConcluirAddIdeia"
+        />
+
+    <Button
+        android:id="@+id/btnConcluirAddIdeia"
+        android:layout_width="350dp"
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/imgIdeiaAddIdeia"
+        app:layout_constraintBottom_toBottomOf="parent"
+        android:text="@string/concluir"
+        android:background="@drawable/botaoshape"
+        android:textColor="#ffffff"
+        />
+
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

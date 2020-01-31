@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:tools="http://schemas.android.com/tools"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+
+    <group android:checkableBehavior="single">
+    <item android:id="@+id/editar"
+        android:title="@string/editar"
+        android:icon="@drawable/ic_edit_black_24dp"
+        app:showAsAction="always"
+        tools:ignore="AlwaysShowAction" />
+    <item
+        android:title="@string/excluir"
+        android:id="@+id/deletar"
+        android:icon="@drawable/ic_delete_black_24dp"
+        app:showAsAction="always"/>
+
+    <item android:id="@+id/salvar"
+        android:icon="@drawable/ic_check_black_24dp"
+        android:title="@string/salvar"
+        app:showAsAction="always"
+        />
+</group>
+</menu>

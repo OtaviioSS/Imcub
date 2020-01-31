@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "478474656451",
+    "firebase_url": "https://imcub-app.firebaseio.com",
+    "project_id": "imcub-app",
+    "storage_bucket": "imcub-app.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:478474656451:android:5807e4731932ee0fd8a076",
+        "android_client_info": {
+          "package_name": "com.example.imcub"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "478474656451-a3khcg6ht0qvnall82qm29evl1ql2cor.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.imcub",
+            "certificate_hash": "6385c22aa756463caf140be19b4954d8d186cec0"
+          }
+        },
+        {
+          "client_id": "478474656451-ptusobrtt760mhpt1kpia4k3mvr6fmno.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDC3MQ889Ee2BCxXSLQziwaERSiJToQ2hw"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "478474656451-ptusobrtt760mhpt1kpia4k3mvr6fmno.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

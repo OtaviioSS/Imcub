@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Activity_Ideia_Detalhes">
+
+
+    <TextView
+        android:id="@+id/txtTitleDetalhes"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/titulo"
+        android:textSize="20sp"
+        android:textColor="#000000"
+        android:textStyle="bold"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toTopOf="@id/txtsobreIdeiasDetalhes"
+        android:layout_marginEnd="300dp"
+        />
+
+    <TextView
+        android:id="@+id/txtsobreIdeiasDetalhes"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/area_para_descri_o_do_texto_descreva_sua_ideia_de_forma_objetiva"
+        android:textColor="#000000"
+        app:layout_constraintStart_toStartOf="@id/txtTitleDetalhes"
+        app:layout_constraintTop_toBottomOf="@+id/txtTitleDetalhes"
+        app:layout_constraintBottom_toTopOf="@+id/imgIdeiaDetalhes"
+        />
+
+    <ImageView
+        android:id="@+id/imgIdeiaDetalhes"
+        android:layout_width="match_parent"
+        android:layout_height="281dp"
+        tools:srcCompat="@tools:sample/backgrounds/scenic"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/txtsobreIdeiasDetalhes"
+        app:layout_constraintBottom_toTopOf="@+id/txtLinkCanvasDetalhes"
+        tools:ignore="ContentDescription" />
+
+    <TextView
+        android:id="@+id/txtLinkCanvasDetalhes"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/baixar_canvas_pdf"
+        android:layout_marginStart="20dp"
+        android:textColor="#000000"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/imgIdeiaDetalhes"
+        app:layout_constraintBottom_toTopOf="@+id/txtTelefoneDetalhes" />
+
+    <TextView
+        android:id="@+id/txtTelefoneDetalhes"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/xx_xxxxx_xxxx"
+        android:textColor="#000000"
+        app:layout_constraintStart_toStartOf="@id/txtLinkCanvasDetalhes"
+        app:layout_constraintEnd_toEndOf="@id/txtLinkCanvasDetalhes"
+        app:layout_constraintTop_toBottomOf="@+id/txtLinkCanvasDetalhes"
+        app:layout_constraintBottom_toTopOf="@+id/txtEmailDetalhes"
+        />
+
+    <TextView
+        android:textColor="#000000"
+        android:id="@+id/txtEmailDetalhes"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/email_imcub_com_br"
+        app:layout_constraintStart_toStartOf="@id/txtTelefoneDetalhes"
+        app:layout_constraintEnd_toEndOf="@id/txtTelefoneDetalhes"
+        app:layout_constraintBottom_toTopOf="@+id/navegtionDetalhes"
+        app:layout_constraintTop_toBottomOf="@id/txtTelefoneDetalhes"
+        />
+
+    <com.google.android.material.bottomnavigation.BottomNavigationView
+        android:id="@+id/navegtionDetalhes"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        app:itemTextColor="#666666"
+        app:menu="@menu/menu"
+        android:background="#eeeeee"
+        app:itemIconTint="#666666"
+        app:itemIconSize="35dp"
+
+        />
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,0 +1,31 @@
+<resources>
+    <string name="app_name">Imcub</string>
+    <string name="facebook">FACEBOOK</string>
+    <string name="nome_de_usuario">nome de usuario</string>
+    <string name="add_ideia">+Add Ideia</string>
+    <string name="titulo">Titulo</string>
+    <string name="usuario">Usuario</string>
+    <string name="cidade_uf">Cidade - UF</string>
+    <string name="concluir">Concluir</string>
+    <string name="digite_seu_nome_completo">Digite seu nome completo</string>
+    <string name="area_para_descri_o_do_texto_descreva_sua_ideia_de_forma_objetiva">Area para descrição do texto, descreva sua ideia de forma objetiva.</string>
+    <string name="baixar_canvas_pdf">Baixar Canvas PDF</string>
+    <string name="xx_xxxxx_xxxx">(XX) XXXXX-XXXX</string>
+    <string name="email_imcub_com_br">   email@imcub.com.br</string>
+    <string name="idade_usuario">Idade Usuario</string>
+    <string name="senha">  senha</string>
+    <string name="entrar">ENTRAR</string>
+    <string name="esqueci_a_senha">Esqueceu a senha?</string>
+    <string name="registre_se">Acredite!  Registre-se!</string>
+    <string name="ou_use_suas_redes">OU USE SUAS REDES</string>
+    <string name="google">GOOGLE</string>
+    <string name="editar">Editar</string>
+    <string name="excluir">Excluir</string>
+    <string name="salvar">Salvar</string>
+    <string name="voc_receber_um_e_mail_com_link_para_alterar_sua_senha_verifique_seu_e_mail">Você receberá um e-mail com link para alterar sua senha, verifique seu e-mail.</string>
+    <string name="recupera_o_de_senha">Recuperação de Senha</string>
+    <string name="enviar">Enviar</string>
+    <string name="facebook_app_id">461431761466924</string>
+    <string name="fb_login_protocol_scheme">fb461431761466924</string>
+
+</resources>
