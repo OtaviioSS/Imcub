@@ -3,7 +3,6 @@
     <string name="facebook">FACEBOOK</string>
     <string name="nome_de_usuario">nome de usuario</string>
     <string name="add_ideia">+Add Ideia</string>
-    <string name="titulo">Titulo</string>
     <string name="usuario">Usuario</string>
     <string name="cidade_uf">Cidade - UF</string>
     <string name="concluir">Concluir</string>
@@ -27,5 +26,9 @@
     <string name="enviar">Enviar</string>
     <string name="facebook_app_id">461431761466924</string>
     <string name="fb_login_protocol_scheme">fb461431761466924</string>
+    <string name="publicar_nova_ideia">Publicar Nova Ideia</string>
+    <string name="titulo">Titulo</string>
+    <string name="whastapp">WhastApp</string>
+    <string name="email_email_com">email@email.com</string>
 
 </resources>

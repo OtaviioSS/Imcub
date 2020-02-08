@@ -13,7 +13,11 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
-import com.example.imcub.R;
+import com.google.android.gms.tasks.OnFailureListener;
+import com.google.android.gms.tasks.OnSuccessListener;
+import com.google.firebase.storage.FirebaseStorage;
+import com.google.firebase.storage.StorageReference;
+import com.imcub.imcubApp.R;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 import com.squareup.picasso.Picasso;
@@ -23,6 +27,12 @@ import java.util.List;
 import modelos.Modelo_Ideia;
 
 public class IdeiaAdapter extends RecyclerView.Adapter<IdeiaAdapter.MyViewHolder> {
+    String nomeImagem;
+    String nomeUsuario;
+    FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
+    FirebaseStorage storage = FirebaseStorage.getInstance();
+    StorageReference storageRef = storage.getReference();
+    StorageReference imagesRef = storageRef.child("images/"+user.getEmail());
 
     List<Modelo_Ideia> ideias ;
     int cor =0;
@@ -30,17 +40,19 @@ public class IdeiaAdapter extends RecyclerView.Adapter<IdeiaAdapter.MyViewHolder
     public IdeiaAdapter(List<Modelo_Ideia> ideias) {
         this.ideias = ideias;
     }
-
     @NonNull
     @Override
     public MyViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int i) {
         View itemLista = LayoutInflater.from(parent.getContext()).inflate(R.layout.activity_item_view_1, parent, false);
         return new MyViewHolder(itemLista);
 
+
+
     }
 
     @Override
     public void onBindViewHolder(@NonNull final MyViewHolder holder, int i) {
+
         try {
             Modelo_Ideia ideia = ideias.get(i);
             holder.tituloIdeia.setText(ideia.getIdeiaTitulo());
@@ -48,20 +60,12 @@ public class IdeiaAdapter extends RecyclerView.Adapter<IdeiaAdapter.MyViewHolder
             holder.nome.setText(ideia.getIdeianomeUser());
             holder.imgUser.setImageURI(Uri.parse(ideia.getIdeiaImagemPerfil()));
             holder.time.setText(ideia.getIdeiaDataDaPub());
-
-
         }catch (Exception e){
             Log.i("Erro","erro",e);
         }
         //Carregar imagem
         FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
-        try {
-        Picasso.get()
-                .load( user.getPhotoUrl() )
-                .resize(50,50)
-                .error(R.drawable.ic_person_black_24dp)
-                .into(holder.imgUser);}catch (NullPointerException e){
-        }
+
         holder.btnGostei.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -88,12 +92,20 @@ public class IdeiaAdapter extends RecyclerView.Adapter<IdeiaAdapter.MyViewHolder
 
             }
         });
+        nomeUsuario = holder.nome.getText().toString();
+        nomeImagem = imagesRef.toString();
+            holder.BaixarImagemPerfil();
+
+
+
     }
 
     @Override
     public int getItemCount() {
         return ideias.size();
+
     }
+
     class MyViewHolder extends RecyclerView.ViewHolder {
         ImageView imgUser;
         TextView nome;
@@ -106,19 +118,42 @@ public class IdeiaAdapter extends RecyclerView.Adapter<IdeiaAdapter.MyViewHolder
 
 
 
-
         MyViewHolder(View itemView) {
             super(itemView);
-            nome = itemView.findViewById(R.id.usernameItemView);
-            time = itemView.findViewById(R.id.timeItemView);
-            imgUser = itemView.findViewById(R.id.imgPerfilItemView);
-            cidadeUser = itemView.findViewById(R.id.cidadeItemView);
-            tituloIdeia = itemView.findViewById(R.id.txtTitleItemView);
-            btnSave = itemView.findViewById(R.id.btnSaveItemVIew);
+            nome = itemView.findViewById(R.id.usernameItemView1);
+            time = itemView.findViewById(R.id.timeItemView1);
+            imgUser = itemView.findViewById(R.id.imgPerfilItemView1);
+            cidadeUser = itemView.findViewById(R.id.cidadeItemView1);
+            tituloIdeia = itemView.findViewById(R.id.txtTitleItemView1);
+            btnSave = itemView.findViewById(R.id.btnSaveItemVIew1);
             btnGostei = itemView.findViewById(R.id.btnLikeItemView1);
-            descricao = itemView.findViewById(R.id.txtDescricaoItemView);
+            descricao = itemView.findViewById(R.id.txtDescricaoItemView1);
         }
-    }
 
+        private void BaixarImagemPerfil(){
+            FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
+            FirebaseStorage storage = FirebaseStorage.getInstance();
+            StorageReference storageRef = storage.getReference();
+
+            storageRef.child("images/"+nomeUsuario).getDownloadUrl().addOnSuccessListener(new OnSuccessListener<Uri>() {
+                @Override
+                public void onSuccess(Uri uri) {
+                    // Got the download URL for 'users/me/profile.png'
+
+                        Picasso.get().load(uri).into(imgUser);
+
+
+                }
+            }).addOnFailureListener(new OnFailureListener() {
+                @Override
+                public void onFailure(@NonNull Exception exception) {
+                    // Handle any errors
+                }
+            });
+
+
+        }
+
+    }
 
 }

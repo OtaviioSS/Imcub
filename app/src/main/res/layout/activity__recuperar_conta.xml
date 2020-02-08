@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".Activity_RecuperarConta"
+    tools:context="com.imcub.imcubApp.Activity_RecuperarConta"
     android:background="#9900ff"
     >
 

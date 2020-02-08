@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="#9900ff"
-    tools:context=".Activity_Cadastro_Usuario">
+    tools:context="com.imcub.imcubApp.Activity_Cadastro_Usuario">
 
 
 

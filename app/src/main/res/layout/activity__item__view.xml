@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    tools:context=".Activity_Item_View"
+    tools:context="com.imcub.imcubApp.Activity_Item_View"
     android:background="@android:color/white"
     android:padding="10dp"
 

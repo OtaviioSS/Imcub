@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".Activity_Add_Ideia"
+    tools:context="com.imcub.imcubApp.Activity_Add_Ideia"
     android:background="#9900ff"
     >
     <TextView
@@ -12,8 +12,8 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="8dp"
-        android:text="Publicar Nova Ideia"
-        android:textSize="10pt"
+        android:text="@string/publicar_nova_ideia"
+        android:textSize="12sp"
         android:textStyle="bold"
         android:textColor="@android:color/white"
         app:layout_constraintEnd_toEndOf="parent"
@@ -26,12 +26,14 @@
         android:id="@+id/imgUserAddNovaIdeia"
         android:layout_width="50dp"
         android:layout_height="50dp"
+        android:src="@drawable/ic_person_black_24dp"
         app:layout_constraintStart_toStartOf="@+id/txtTituloAddIdeia"
         app:layout_constraintTop_toBottomOf="@+id/txtAddNovaIdeia"
         app:layout_constraintBottom_toTopOf="@id/txtTituloAddIdeia"
         android:layout_marginTop="8dp"
         android:layout_marginBottom="8dp"
         android:layout_marginStart="16dp"
+        android:background="@drawable/btnredondo"
          />
 
     <TextView
@@ -62,7 +64,7 @@
     <EditText
         android:textColorLink="#ffffff"
         android:id="@+id/txtTituloAdd"
-        android:hint="Titulo"
+        android:hint="@string/titulo"
         android:layout_width="350dp"
         android:layout_height="wrap_content"
         android:textColor="#ffffff"
@@ -106,7 +108,7 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="@id/txtEmailAddIdeia"
         android:textColorHint="#ffffff"
-        android:hint="WhastApp"
+        android:hint="@string/whastapp"
 
         >
 
@@ -137,7 +139,7 @@
         >
 
     <EditText
-        android:hint="email@email.com"
+        android:hint="@string/email_email_com"
         android:id="@+id/txtEmailAddIdei"
         android:layout_width="200dp"
         android:layout_height="40dp"
@@ -158,7 +160,7 @@
         android:layout_height="200dp"
         android:background="#00ffffff"
         app:layout_constraintBottom_toTopOf="@id/btnConcluirAddIdeia"
-        />
+        tools:ignore="ContentDescription" />
 
     <Button
         android:id="@+id/btnConcluirAddIdeia"

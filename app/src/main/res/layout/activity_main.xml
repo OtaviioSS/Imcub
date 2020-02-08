@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="#9900ff"
-    tools:context=".MainActivity">
+    tools:context="com.imcub.imcubApp.MainActivity">
 
 
     <ImageView
@@ -90,45 +90,28 @@
         android:text="@string/entrar"
         android:textColor="#ffffff"
         android:textSize="14sp"
-        app:layout_constraintBottom_toTopOf="@+id/btnFacebookLogin"
+        app:layout_constraintBottom_toTopOf="@+id/sign_in_button"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/btnEsqueci" />
 
 
-    <Button
-        android:id="@+id/btnFacebookLogin"
-        android:layout_width="250dp"
-        android:layout_height="35dp"
-        android:background="@drawable/btnfb"
-        android:drawableStart="@drawable/ic_facebook_square_social_logo"
-        android:padding="10dp"
-        android:text="@string/facebook"
-        android:textColor="@android:color/white"
-        android:textSize="14sp"
-        app:layout_constraintTop_toBottomOf="@id/btnLogarLogin"
-        app:layout_constraintBottom_toTopOf="@+id/sign_in_button"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        android:layout_marginBottom="10dp"
-        />
 
-    <Button
+
+    <View
         android:id="@+id/sign_in_button"
         android:layout_width="250dp"
         android:layout_height="35dp"
         app:layout_constraintBottom_toTopOf="@+id/btnCadEmail"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/btnFacebookLogin"
+        app:layout_constraintTop_toBottomOf="@id/btnLogarLogin"
         app:layout_constraintStart_toStartOf="parent"
-        android:padding="10dp"
-        android:background="@drawable/btngoogle"
-        android:drawableLeft="@drawable/ic_icons8_google_logo"
-        android:text="@string/google"
+        android:background="#9900ff"/>
+        <!--android:text="@string/google"
         android:textColor="#0033ff"
-        android:textSize="14sp"
-        tools:ignore="RtlHardcoded"
-        />
+        android:drawableLeft="@drawable/ic_icons8_google_logo"
+        android:textSize="14sp"-->
+
 
     <TextView
         android:id="@+id/btnCadEmail"

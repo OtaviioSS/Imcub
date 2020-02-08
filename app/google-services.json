@@ -10,7 +10,7 @@
       "client_info": {
         "mobilesdk_app_id": "1:478474656451:android:5807e4731932ee0fd8a076",
         "android_client_info": {
-          "package_name": "com.example.imcub"
+          "package_name": "com.imcub.imcubApp"
         }
       },
       "oauth_client": [
@@ -18,7 +18,7 @@
           "client_id": "478474656451-a3khcg6ht0qvnall82qm29evl1ql2cor.apps.googleusercontent.com",
           "client_type": 1,
           "android_info": {
-            "package_name": "com.example.imcub",
+            "package_name": "com.imcub.imcubApp",
             "certificate_hash": "6385c22aa756463caf140be19b4954d8d186cec0"
           }
         },
