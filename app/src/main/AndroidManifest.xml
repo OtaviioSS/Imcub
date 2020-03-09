@@ -1,4 +1,4 @@
-<?xml version="1.1" encoding="utf-8"?>
+<?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     package="com.imcub.imcubApp">
@@ -13,7 +13,7 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.AppCompat.DayNight.NoActionBar"
         tools:ignore="AllowBackup,GoogleAppIndexingWarning">
-        <activity android:name=".Activity_Perfil_Item_View"></activity>
+        <activity android:name=".Activity_Perfil_Item_View" />
         <activity android:name=".Activity_item_view_1" />
         <activity android:name=".Activity_RecuperarConta" />
         <activity android:name=".Activity_Perfil_Usuario" />

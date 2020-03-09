@@ -37,10 +37,11 @@
         />
 
 
-    <EditText
+    <com.google.android.material.textfield.TextInputEditText
         android:id="@+id/barNomeCadUser"
         android:layout_width="300dp"
         android:layout_height="40dp"
+        android:minHeight="48dp"
         android:ems="24"
         android:hint="@string/digite_seu_nome_completo"
         android:inputType="textPersonName"
@@ -57,6 +58,7 @@
         android:id="@+id/barDataNacimentoCadUser"
         android:layout_width="300dp"
         android:layout_height="40dp"
+        android:minHeight="48dp"
         android:inputType="date"
         android:textSize="8pt"
         android:textColor="@android:color/white"
@@ -74,6 +76,7 @@
         android:id="@+id/barEmailCadUser"
         android:layout_width="300dp"
         android:layout_height="40dp"
+        android:minHeight="48dp"
         android:layout_gravity="center"
         android:hint="exemplo@email.com"
         android:textSize="8pt"
@@ -90,6 +93,7 @@
         android:id="@+id/barSenhaCadUser"
         android:layout_width="300dp"
         android:layout_height="40dp"
+        android:minHeight="48dp"
         android:ems="10"
         android:inputType="textPassword"
         android:textSize="8pt"
@@ -110,6 +114,7 @@
         android:id="@+id/btnConcluirCadUser"
         android:layout_width="200dp"
         android:layout_height="40dp"
+        android:minHeight="48dp"
         android:background="@drawable/botaoshape"
         android:text="@string/concluir"
         android:textColor="@android:color/white"

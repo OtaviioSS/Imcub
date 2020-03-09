@@ -27,28 +27,15 @@
         android:id="@+id/usernameItemView1"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginStart="10dp"
+        android:text="@string/usuario"
         android:textColor="#ffffff"
         android:textSize="16sp"
         android:textStyle="bold"
-        android:text="@string/usuario"
         app:layout_constraintStart_toEndOf="@id/imgPerfilItemView1"
         app:layout_constraintTop_toTopOf="@id/imgPerfilItemView1"
-        app:layout_constraintBottom_toTopOf="@id/cidadeItemView1"
-        android:layout_marginStart="2dp"
-
-        />
-
-    <TextView
-        android:textColor="#bbbbbb"
-        android:id="@+id/cidadeItemView1"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/cidade_uf"
-        app:layout_constraintStart_toStartOf="@id/usernameItemView1"
-        app:layout_constraintTop_toBottomOf="@id/usernameItemView1"
         app:layout_constraintBottom_toTopOf="@+id/timeItemView1"
-        android:layout_marginBottom="5dp"
-        android:layout_marginTop="2dp"
+
         />
 
     <TextView
@@ -56,13 +43,15 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textColor="#888888"
-        android:textSize="18sp"
-        tools:text="há 0 dias"
-        app:layout_constraintStart_toStartOf="@id/cidadeItemView1"
-        app:layout_constraintTop_toBottomOf="@id/cidadeItemView1"
-        app:layout_constraintEnd_toEndOf="@id/cidadeItemView1"
+        android:textSize="12sp"
+        android:layout_marginBottom="20dp"
+        android:layout_marginStart="5dp"
         app:layout_constraintBottom_toTopOf="@id/txtDescricaoItemView1"
-        />
+        app:layout_constraintStart_toStartOf="@+id/usernameItemView1"
+        app:layout_constraintEnd_toEndOf="@+id/usernameItemView1"
+        app:layout_constraintTop_toBottomOf="@id/usernameItemView1"
+        tools:text="há 0 dias"
+        tools:ignore="MissingConstraints,UnknownIdInLayout"/>
 
 
     <TextView

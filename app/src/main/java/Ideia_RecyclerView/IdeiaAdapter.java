@@ -15,6 +15,7 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
+import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.storage.FirebaseStorage;
 import com.google.firebase.storage.StorageReference;
 import com.imcub.imcubApp.R;
@@ -22,17 +23,18 @@ import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 import com.squareup.picasso.Picasso;
 
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 import modelos.Modelo_Ideia;
 
 public class IdeiaAdapter extends RecyclerView.Adapter<IdeiaAdapter.MyViewHolder> {
-    String nomeImagem;
-    String nomeUsuario;
+    private String nomeImagem;
+    private String nomeUsuario;
     FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
-    FirebaseStorage storage = FirebaseStorage.getInstance();
-    StorageReference storageRef = storage.getReference();
-    StorageReference imagesRef = storageRef.child("images/"+user.getEmail());
+    DatabaseReference reference;
+
 
     List<Modelo_Ideia> ideias ;
     int cor =0;
@@ -59,7 +61,7 @@ public class IdeiaAdapter extends RecyclerView.Adapter<IdeiaAdapter.MyViewHolder
             holder.descricao.setText(ideia.getIdeiaDescricao());
             holder.nome.setText(ideia.getIdeianomeUser());
             holder.imgUser.setImageURI(Uri.parse(ideia.getIdeiaImagemPerfil()));
-            holder.time.setText(ideia.getIdeiaDataDaPub());
+            holder.time.setText("Publicado dia "+ideia.getIdeiaDataDaPub());
         }catch (Exception e){
             Log.i("Erro","erro",e);
         }
@@ -72,7 +74,7 @@ public class IdeiaAdapter extends RecyclerView.Adapter<IdeiaAdapter.MyViewHolder
                 if(cor == 0) {
                     holder.btnGostei.setColorFilter(Color.parseColor("#ff8800"));
                     cor = 1;
-                }else{
+
                     holder.btnGostei.setColorFilter(Color.parseColor("#ffffff"));
                     cor =0;
                 }
@@ -92,14 +94,23 @@ public class IdeiaAdapter extends RecyclerView.Adapter<IdeiaAdapter.MyViewHolder
 
             }
         });
-        nomeUsuario = holder.nome.getText().toString();
-        nomeImagem = imagesRef.toString();
-            holder.BaixarImagemPerfil();
+
+        FirebaseStorage storage = FirebaseStorage.getInstance();
+        StorageReference storageRef = storage.getReference();
+        if(user!=null){
+         StorageReference imagesRef = storageRef.child("images/"+user.getEmail());
+            nomeUsuario = holder.nome.getText().toString();
+            nomeImagem = imagesRef.toString();
+            holder.BaixarImagemPerfil();}
 
 
 
     }
-
+    private void contCurtidas(DatabaseReference reference){
+        Map<String,Object> mapLikes = new HashMap<>();
+        mapLikes.put("ideiaCurtidas", true);
+        reference.child("ideiaCurtidas").updateChildren(mapLikes);
+    }
     @Override
     public int getItemCount() {
         return ideias.size();
@@ -111,7 +122,6 @@ public class IdeiaAdapter extends RecyclerView.Adapter<IdeiaAdapter.MyViewHolder
         TextView nome;
         TextView time;
         TextView descricao;
-        TextView cidadeUser;
         TextView tituloIdeia;
         ImageButton btnGostei;
         ImageButton btnSave;
@@ -123,7 +133,6 @@ public class IdeiaAdapter extends RecyclerView.Adapter<IdeiaAdapter.MyViewHolder
             nome = itemView.findViewById(R.id.usernameItemView1);
             time = itemView.findViewById(R.id.timeItemView1);
             imgUser = itemView.findViewById(R.id.imgPerfilItemView1);
-            cidadeUser = itemView.findViewById(R.id.cidadeItemView1);
             tituloIdeia = itemView.findViewById(R.id.txtTitleItemView1);
             btnSave = itemView.findViewById(R.id.btnSaveItemVIew1);
             btnGostei = itemView.findViewById(R.id.btnLikeItemView1);
