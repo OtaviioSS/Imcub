@@ -1,0 +1,177 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Activity_Swot"
+    android:background="@drawable/telas_background"
+    >
+<ScrollView
+    app:layout_constraintStart_toStartOf="parent"
+    app:layout_constraintEnd_toEndOf="parent"
+    app:layout_constraintTop_toTopOf="parent"
+    app:layout_constraintBottom_toBottomOf="parent"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+
+    >
+<TextView
+    android:id="@+id/txtTituloForca"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:text="FORÇAS"
+    android:textStyle="bold"
+    android:textColor="#ffffff"
+    android:textSize="36sp"
+    app:layout_constraintStart_toStartOf="parent"
+    app:layout_constraintEnd_toEndOf="parent"
+    app:layout_constraintTop_toTopOf="parent"
+    android:layout_marginEnd="230dp"
+    android:layout_marginTop="20dp"
+    />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="(STRENGTHS)"
+        android:textSize="14sp"
+        android:textColor="#ffffff"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="@+id/txtTituloForca"
+        app:layout_constraintTop_toBottomOf="@+id/txtTituloForca"
+        />
+
+    <TextView
+        android:id="@+id/txtDescricaoForca"
+        android:layout_width="360dp"
+        android:layout_height="65dp"
+        android:textColor="#ffffff"
+        android:textSize="12sp"
+        app:layout_constraintStart_toStartOf="@id/txtTituloForca"
+        app:layout_constraintTop_toBottomOf="@+id/txtTituloForca"
+        app:layout_constraintBottom_toTopOf="@+id/txtTituloFraqueza"
+        android:layout_marginTop="15dp"
+        android:text="@string/swotforca"
+        />
+
+
+    <TextView
+        android:id="@+id/txtTituloFraqueza"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="FRAQUEZA"
+        android:textStyle="bold"
+        android:textColor="#ffffff"
+        android:textSize="36sp"
+        app:layout_constraintStart_toStartOf="@id/txtTituloForca"
+        app:layout_constraintTop_toBottomOf="@+id/txtDescricaoForca"
+        app:layout_constraintBottom_toTopOf="@+id/txtDescricaoFraqueza"
+        android:layout_marginTop="10dp"
+        />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="(WEAKENESSES)"
+        android:textSize="14sp"
+        android:textColor="#ffffff"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="@+id/txtTituloFraqueza"
+        app:layout_constraintTop_toBottomOf="@+id/txtTituloFraqueza"
+        />
+
+    <TextView
+        android:id="@+id/txtDescricaoFraqueza"
+        android:layout_width="360dp"
+        android:layout_height="65dp"
+        android:textColor="#ffffff"
+        android:textSize="12sp"
+        app:layout_constraintStart_toStartOf="@id/txtTituloFraqueza"
+        app:layout_constraintTop_toBottomOf="@+id/txtTituloFraqueza"
+        app:layout_constraintBottom_toTopOf="@+id/txtTituloOportunidade"
+        android:layout_marginTop="15dp"
+        android:text="@string/swotfraqueza"
+        />
+
+
+    <TextView
+        android:id="@+id/txtTituloOportunidade"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="OPORTUNIDADES"
+        android:textStyle="bold"
+        android:textColor="#ffffff"
+        android:textSize="36sp"
+        app:layout_constraintStart_toStartOf="@id/txtTituloFraqueza"
+        app:layout_constraintTop_toBottomOf="@+id/txtDescricaoFraqueza"
+        app:layout_constraintBottom_toTopOf="@+id/txtDescricaoOportunidades"
+        android:layout_marginTop="10dp"
+        />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="(OPPORTUNITIES)"
+        android:textSize="14sp"
+        android:textColor="#ffffff"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="@+id/txtTituloOportunidade"
+        app:layout_constraintTop_toBottomOf="@+id/txtTituloOportunidade"
+        />
+
+    <TextView
+        android:id="@+id/txtDescricaoOportunidades"
+        android:layout_width="360dp"
+        android:layout_height="50dp"
+        android:textColor="#ffffff"
+        android:textSize="12sp"
+        app:layout_constraintStart_toStartOf="@id/txtTituloOportunidade"
+        app:layout_constraintTop_toBottomOf="@+id/txtTituloOportunidade"
+        app:layout_constraintBottom_toTopOf="@+id/txtTituloAmeacas"
+        android:layout_marginTop="10dp"
+        android:text="@string/swotoportunidades"
+        />
+
+
+    <TextView
+        android:id="@+id/txtTituloAmeacas"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="AMEAÇAS"
+        android:textStyle="bold"
+        android:textColor="#ffffff"
+        android:textSize="36sp"
+        app:layout_constraintStart_toStartOf="@id/txtTituloOportunidade"
+        app:layout_constraintTop_toBottomOf="@+id/txtDescricaoOportunidades"
+        app:layout_constraintBottom_toTopOf="@id/txtDescricaoAmeacas"
+        android:layout_marginTop="10dp"
+        />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="(THREATS)"
+        android:textSize="14sp"
+        android:textColor="#ffffff"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="@+id/txtTituloAmeacas"
+        app:layout_constraintTop_toBottomOf="@+id/txtTituloAmeacas"
+        />
+
+    <TextView
+        android:id="@+id/txtDescricaoAmeacas"
+        android:layout_width="360dp"
+        android:layout_height="65dp"
+        android:textColor="#ffffff"
+        android:textSize="12sp"
+        app:layout_constraintStart_toStartOf="@id/txtTituloAmeacas"
+        app:layout_constraintTop_toBottomOf="@+id/txtTituloAmeacas"
+        app:layout_constraintBottom_toBottomOf="parent"
+        android:layout_marginTop="15dp"
+        android:text="@string/swotameaças"
+        android:layout_marginBottom="30dp"
+        />
+</ScrollView>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
