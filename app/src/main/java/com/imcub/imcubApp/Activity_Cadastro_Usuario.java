@@ -157,7 +157,6 @@ public class Activity_Cadastro_Usuario extends AppCompatActivity {
 
     //[Inicio de Função Carregar Imagem Para Firebase Storage]
     private void uploadimg() {
-
         try {
             String filename = txtemail.getText().toString().trim();
             final StorageReference ref = FirebaseStorage.getInstance().getReference("/images/" + filename);

@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <adaptive-icon xmlns:android="http://schemas.android.com/apk/res/android">
-    <background android:drawable="@color/ic_logoapppng_background"/>
+    <background android:drawable="@drawable/botaoshape"  />
     <foreground android:drawable="@mipmap/ic_logoapppng_foreground"/>
+
 </adaptive-icon>

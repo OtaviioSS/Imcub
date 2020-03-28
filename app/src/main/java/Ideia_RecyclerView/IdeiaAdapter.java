@@ -1,11 +1,14 @@
 package Ideia_RecyclerView;
 
+import android.content.Context;
+import android.content.Intent;
 import android.graphics.Color;
 import android.net.Uri;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.TextView;
@@ -18,6 +21,8 @@ import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.storage.FirebaseStorage;
 import com.google.firebase.storage.StorageReference;
+import com.imcub.imcubApp.Activity_CriarSwot;
+import com.imcub.imcubApp.Activity_Swot;
 import com.imcub.imcubApp.R;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
@@ -41,6 +46,7 @@ public class IdeiaAdapter extends RecyclerView.Adapter<IdeiaAdapter.MyViewHolder
 
     public IdeiaAdapter(List<Modelo_Ideia> ideias) {
         this.ideias = ideias;
+
     }
     @NonNull
     @Override
@@ -68,29 +74,24 @@ public class IdeiaAdapter extends RecyclerView.Adapter<IdeiaAdapter.MyViewHolder
         //Carregar imagem
         FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
 
-        holder.btnGostei.setOnClickListener(new View.OnClickListener() {
+        holder.btnCanvas.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 if(cor == 0) {
-                    holder.btnGostei.setColorFilter(Color.parseColor("#ff8800"));
+                  //  holder.btnGostei.setColorFilter(Color.parseColor("#ff8800"));
                     cor = 1;
 
-                    holder.btnGostei.setColorFilter(Color.parseColor("#ffffff"));
+                   // holder.btnGostei.setColorFilter(Color.parseColor("#ffffff"));
                     cor =0;
                 }
 
             }
         });
-        holder.btnSave.setOnClickListener(new View.OnClickListener() {
+        holder.btnSwot.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if(cor == 0) {
-                    holder.btnSave.setColorFilter(Color.parseColor("#00ee55"));
-                    cor = 1;
-                }else{
-                    holder.btnSave.setColorFilter(Color.parseColor("#ffffff"));
-                    cor =0;
-                }
+               Intent intent = new Intent(v.getContext(), Activity_Swot.class);
+              v.getContext().startActivity(intent);
 
             }
         });
@@ -106,10 +107,8 @@ public class IdeiaAdapter extends RecyclerView.Adapter<IdeiaAdapter.MyViewHolder
 
 
     }
-    private void contCurtidas(DatabaseReference reference){
-        Map<String,Object> mapLikes = new HashMap<>();
-        mapLikes.put("ideiaCurtidas", true);
-        reference.child("ideiaCurtidas").updateChildren(mapLikes);
+    private void abrir(){
+
     }
     @Override
     public int getItemCount() {
@@ -123,8 +122,8 @@ public class IdeiaAdapter extends RecyclerView.Adapter<IdeiaAdapter.MyViewHolder
         TextView time;
         TextView descricao;
         TextView tituloIdeia;
-        ImageButton btnGostei;
-        ImageButton btnSave;
+        Button btnCanvas;
+        Button btnSwot;
 
 
 
@@ -134,8 +133,8 @@ public class IdeiaAdapter extends RecyclerView.Adapter<IdeiaAdapter.MyViewHolder
             time = itemView.findViewById(R.id.timeItemView1);
             imgUser = itemView.findViewById(R.id.imgPerfilItemView1);
             tituloIdeia = itemView.findViewById(R.id.txtTitleItemView1);
-            btnSave = itemView.findViewById(R.id.btnSaveItemVIew1);
-            btnGostei = itemView.findViewById(R.id.btnLikeItemView1);
+            btnCanvas= itemView.findViewById(R.id.btnCanvasItemVIew1);
+            btnSwot = itemView.findViewById(R.id.btnSwotItemView1);
             descricao = itemView.findViewById(R.id.txtDescricaoItemView1);
         }
 

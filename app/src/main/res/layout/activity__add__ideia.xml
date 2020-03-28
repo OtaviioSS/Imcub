@@ -7,19 +7,28 @@
     tools:context="com.imcub.imcubApp.Activity_Add_Ideia"
     android:background="#9900ff"
     >
+    <View
+        android:id="@+id/topoCriarIdeia"
+        android:layout_width="wrap_content"
+        android:layout_height="200dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:background="@drawable/topomont"
+        />
     <TextView
         android:id="@+id/txtAddNovaIdeia"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="8dp"
         android:text="@string/publicar_nova_ideia"
-        android:textSize="12sp"
+        android:textSize="24sp"
         android:textStyle="bold"
-        android:textColor="@android:color/white"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintBottom_toTopOf="@id/imgUserAddNovaIdeia"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        android:textColor="#888888"
+        app:layout_constraintEnd_toEndOf="@id/topoCriarIdeia"
+        app:layout_constraintBottom_toBottomOf="@id/topoCriarIdeia"
+        app:layout_constraintStart_toStartOf="@id/topoCriarIdeia"
+        app:layout_constraintTop_toTopOf="@id/topoCriarIdeia" />
 
 
     <de.hdodenhof.circleimageview.CircleImageView
@@ -28,7 +37,7 @@
         android:layout_height="50dp"
         android:src="@drawable/ic_person_black_24dp"
         app:layout_constraintStart_toStartOf="@+id/txtTituloAddIdeia"
-        app:layout_constraintTop_toBottomOf="@+id/txtAddNovaIdeia"
+        app:layout_constraintTop_toBottomOf="@+id/topoCriarIdeia"
         app:layout_constraintBottom_toTopOf="@id/txtTituloAddIdeia"
         android:layout_marginTop="8dp"
         android:layout_marginBottom="8dp"
@@ -56,19 +65,22 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/imgUserAddNovaIdeia"
-        android:textColorHint="#ffffff"
+        android:textColorHint="#888888"
         app:counterEnabled="true"
         app:counterMaxLength="30"
 
+
         >
     <EditText
-        android:textColorLink="#ffffff"
+        android:padding="5dp"
+        android:paddingStart="10dp"
+        android:background="@drawable/bartext"
+        android:textColorLink="#000000"
         android:id="@+id/txtTituloAdd"
         android:hint="@string/titulo"
         android:layout_width="350dp"
         android:layout_height="wrap_content"
-        android:textColor="#ffffff"
-        android:textColorHint="#ffffff"
+        android:textColor="#000000"
         android:textSize="24sp"
         android:inputType="text" />
 
@@ -94,7 +106,7 @@
         android:padding="2dp"
         android:layout_width="350dp"
         android:layout_height="100dp"
-        android:background="@android:color/white"
+        android:background="@drawable/bartext"
         android:inputType="textMultiLine"
 
         />
@@ -107,7 +119,7 @@
         app:layout_constraintBottom_toBottomOf="@id/txtEmailAddIdeia"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="@id/txtEmailAddIdeia"
-        android:textColorHint="#ffffff"
+        android:textColorHint="#888888"
         android:hint="@string/whastapp"
 
         >
@@ -116,64 +128,80 @@
         android:id="@+id/txtWhastAppAddIdei"
         android:layout_width="150dp"
         android:layout_height="40dp"
+        android:paddingStart="10dp"
         android:textColor="#ffffff"
         android:textColorHint="@android:color/white"
         android:inputType="phone"
+        android:background="@drawable/bartext"
         android:textAlignment="viewStart"
         android:imeOptions="actionNext"
         app:met_mask="(##)#####-####"
 
         />
     </com.google.android.material.textfield.TextInputLayout>
+    <Button
+        android:id="@+id/btnCanvasAddIdeia"
+        android:layout_width="150dp"
+        android:layout_height="40dp"
+        android:background="@drawable/botaoshape"
+        android:text="@string/canvas"
+        android:textColor="#ffffff"
+        app:layout_constraintEnd_toEndOf="@id/txtWhastAppAddIdeia"
+        app:layout_constraintStart_toStartOf="@id/txtWhastAppAddIdeia"
+        app:layout_constraintTop_toBottomOf="@id/txtWhastAppAddIdeia"
+        android:layout_marginTop="20dp"
+        />
 
     <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/txtEmailAddIdeia"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:textColorHint="#888888"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@id/txtWhastAppAddIdeia"
-        app:layout_constraintBottom_toTopOf="@id/imgIdeiaAddIdeia"
         app:layout_constraintTop_toBottomOf="@id/txtDescricaoAddIdeia"
-        android:id="@+id/txtEmailAddIdeia"
-        android:textColorHint="#ffffff"
 
         >
 
-    <EditText
-        android:hint="@string/email_email_com"
-        android:id="@+id/txtEmailAddIdei"
-        android:layout_width="200dp"
-        android:layout_height="40dp"
-        android:inputType="textEmailAddress"
-        android:textColor="@android:color/white"
-        android:textColorHint="#ffffff"
+        <EditText
+            android:id="@+id/txtEmailAddIdei"
+            android:layout_width="150dp"
+            android:layout_height="40dp"
+            android:background="@drawable/bartext"
+            android:hint="@string/email"
+            android:inputType="textEmailAddress"
+            android:paddingStart="10dp"
+            android:textColor="@android:color/white"
+            android:textColorHint="#ffffff"
 
 
-        />
+            />
     </com.google.android.material.textfield.TextInputLayout>
+    <Button
+        android:id="@+id/btnSOWTAddIdeia"
+        android:layout_width="150dp"
+        android:layout_height="40dp"
+        android:background="@drawable/botaoshape"
+        android:text="@string/swot"
+        android:textColor="#ffffff"
+        app:layout_constraintEnd_toEndOf="@id/txtEmailAddIdeia"
+        app:layout_constraintStart_toStartOf="@id/txtEmailAddIdeia"
+        app:layout_constraintTop_toBottomOf="@id/txtEmailAddIdeia"
+        android:layout_marginTop="20dp"
+        />
 
-    <ImageButton
-        android:id="@+id/imgIdeiaAddIdeia"
-        app:layout_constraintTop_toBottomOf="@+id/txtEmailAddIdeia"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        android:layout_width="350dp"
-        android:layout_height="200dp"
-        android:background="#00ffffff"
-        app:layout_constraintBottom_toTopOf="@id/btnConcluirAddIdeia"
-        tools:ignore="ContentDescription" />
 
     <Button
         android:id="@+id/btnConcluirAddIdeia"
-        android:layout_width="350dp"
+        android:layout_width="150dp"
         android:layout_height="wrap_content"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/imgIdeiaAddIdeia"
-        app:layout_constraintBottom_toBottomOf="parent"
-        android:text="@string/concluir"
         android:background="@drawable/botaoshape"
+        android:text="@string/concluir"
         android:textColor="#ffffff"
-        />
+        app:layout_constraintTop_toBottomOf="@id/btnCanvasAddIdeia"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
 
 
 

@@ -13,13 +13,13 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.AppCompat.DayNight.NoActionBar"
         tools:ignore="AllowBackup,GoogleAppIndexingWarning">
+        <activity android:name=".Activity_Swot"></activity>
+        <activity android:name=".Activity_CriarSwot" />
         <activity android:name=".Activity_Perfil_Item_View" />
         <activity android:name=".Activity_item_view_1" />
         <activity android:name=".Activity_RecuperarConta" />
         <activity android:name=".Activity_Perfil_Usuario" />
-        <activity android:name=".Activity_Ideia_Detalhes" />
         <activity android:name=".Activity_Cadastro_Usuario" />
-        <activity android:name=".Activity_Item_View" />
         <activity android:name=".Activity_Inicio">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

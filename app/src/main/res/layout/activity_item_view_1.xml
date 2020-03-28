@@ -5,7 +5,9 @@
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     tools:context="com.imcub.imcubApp.Activity_item_view_1"
-    android:background="#9900ff"
+    android:background="@drawable/item_bacground"
+    android:layout_marginBottom="20dp"
+    android:padding="10dp"
     >
 
 
@@ -74,49 +76,43 @@
         android:text="@string/titulo"
         android:textColor="#ffffff"
         android:textSize="18sp"
+        android:textStyle="bold"
         app:layout_constraintStart_toStartOf="@+id/txtDescricaoItemView1"
         app:layout_constraintTop_toBottomOf="@+id/txtDescricaoItemView1"
         app:layout_constraintEnd_toStartOf="@+id/btnLikeItemView1"
         app:layout_constraintBottom_toBottomOf="parent" />
 
-    <ImageButton
-        android:id="@+id/btnLikeItemView1"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:background="@android:color/white"
-        android:src="@drawable/ic_favorite_black_24dp"
-        android:tint="#ffffff"
-        android:backgroundTint="#9900ff"
+    <Button
+        android:id="@+id/btnSwotItemView1"
+        android:layout_width="80dp"
+        android:layout_height="30dp"
         app:layout_constraintStart_toEndOf="@+id/txtTitleItemView1"
-        app:layout_constraintEnd_toStartOf="@+id/btnSaveItemVIew1"
+        app:layout_constraintEnd_toStartOf="@+id/btnCanvasItemVIew1"
         app:layout_constraintTop_toTopOf="@+id/txtTitleItemView1"
         app:layout_constraintBottom_toBottomOf="@+id/txtTitleItemView1"
         android:layout_marginStart="100dp"
+        android:background="@drawable/botaoshape"
+        android:text="@string/swot"
+        android:textColor="#ffffff"
+        android:textStyle="bold"
         />
 
-    <ImageButton
-        android:id="@+id/btnSaveItemVIew1"
-        android:layout_width="40dp"
-        android:layout_height="40dp"
-        android:background="@android:color/white"
-        android:backgroundTint="#9900ff"
-        android:src="@drawable/ic_save_black_24dp"
-        app:layout_constraintStart_toEndOf="@+id/btnLikeItemView1"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/btnLikeItemView1"
-        app:layout_constraintBottom_toBottomOf="@+id/btnLikeItemView1"
-        android:tint="#ffffff"
-        android:layout_marginStart="10dp"
-        />
-    <View
-        android:layout_width="match_parent"
+    <Button
+        android:id="@+id/btnCanvasItemVIew1"
+        android:layout_width="80dp"
         android:layout_height="30dp"
-        android:background="@android:color/white"
-        app:layout_constraintTop_toBottomOf="@+id/btnSaveItemVIew1"
-        app:layout_constraintStart_toStartOf="parent"
+        android:background="@drawable/botaoshape"
+        app:layout_constraintStart_toEndOf="@+id/btnSwotItemView1"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/btnSwotItemView1"
+        app:layout_constraintBottom_toBottomOf="@+id/btnSwotItemView1"
+        android:layout_marginStart="10dp"
+        android:text="@string/canvas"
+        android:textStyle="bold"
+        android:textColor="#ffffff"
+        android:textSize="12sp"
         />
+
 
 
 

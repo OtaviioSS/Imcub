@@ -51,6 +51,7 @@ public class Activity_Add_Ideia extends AppCompatActivity {
     private TextView txtNomeUsuario;
     private ImageView imgPerfilUsuario;
     private Button concluir;
+    private Button btnswot;
     private DatabaseReference databaseReference;
     private FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
     private Uri imagemSelecionada;
@@ -109,6 +110,7 @@ private void BaixarImagemPerfil(){
     }
     private void cliquesdebotoes() {
         concluir.setOnClickListener(adicionarIdeia);
+        btnswot.setOnClickListener(adicionarSwot);
     }
     private void inicializarcompnetente() {
         txtTituloIdeia = findViewById(R.id.txtTituloAdd);
@@ -118,9 +120,7 @@ private void BaixarImagemPerfil(){
         txtNomeUsuario = findViewById(R.id.txtNomeUsuarioAddIdeia);
         imgPerfilUsuario = findViewById(R.id.imgUserAddNovaIdeia);
         concluir = findViewById(R.id.btnConcluirAddIdeia);
-
-
-
+        btnswot = findViewById(R.id.btnSOWTAddIdeia);
     }
 
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
@@ -153,8 +153,7 @@ private void BaixarImagemPerfil(){
                     try {
                         SimpleDateFormat formataData = new SimpleDateFormat("dd-MM-yyyy");
                         Date data = new Date();
-                        String dataFormatada = formataData.format(data);
-                        String dataPub = "Publicado "+dataFormatada;
+                        String dataFormatada = formataData.format(data);String dataPub = "Publicado "+dataFormatada;
                 Modelo_Ideia ideia = new Modelo_Ideia();
                 ideia.setIdeiaTitulo(txtTituloIdeia.getText().toString());
                 ideia.setIdeiaDescricao(txtDescricaoIdeia.getText().toString());
@@ -164,8 +163,8 @@ private void BaixarImagemPerfil(){
                 ideia.setIdeiaImagemPerfil(imgPerfilUsuario.toString());
                 ideia.setIdeiaCurtidas(0);
                 ideia.setIdeiaDataDaPub(dataPub);
-                ideia.setIdeiaId(UUID.randomUUID().toString());
-                databaseReference.child("Ideias").child(ideia.getIdeiaId()).setValue(ideia);
+                ideia.setIdeiaId(user.getUid());
+                databaseReference.child("Ideias").child(ideia.getIdeiaId()).setValue(ideia); //A IDEIA SÓ GANHA ID DEPOIS DE CRIADA !!!!
                 Intent intent = new Intent(Activity_Add_Ideia.this, Activity_Inicio.class);
                 startActivity(intent);
                 limparcampos();
@@ -174,6 +173,19 @@ private void BaixarImagemPerfil(){
                     Toast.makeText(Activity_Add_Ideia.this, "Erro  " + err, Toast.LENGTH_LONG).show();
                     } }};
         //[Fim salvar ideia]
+
+
+        // [Inicio abrir swot]
+            View.OnClickListener adicionarSwot = new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(Activity_Add_Ideia.this,Activity_CriarSwot.class);
+                startActivity(intent);
+            }
+        };
+
+
+        //[fim abrir swot]
 
           //[Inicio selecao de imagens]
                 View.OnClickListener selecionarimagem = new View.OnClickListener() {

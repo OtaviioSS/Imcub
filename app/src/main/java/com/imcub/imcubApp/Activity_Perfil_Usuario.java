@@ -1,5 +1,6 @@
 package com.imcub.imcubApp;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
@@ -26,6 +27,7 @@ import java.util.List;
 import Ideia_RecyclerView.IdeiaAdapter;
 import Ideia_RecyclerView.IdeiaAdapter2;
 import modelos.Modelo_Ideia;
+import modelos.Modelo_Usuario;
 
 public class Activity_Perfil_Usuario extends AppCompatActivity {
 
@@ -60,7 +62,6 @@ public class Activity_Perfil_Usuario extends AppCompatActivity {
     private void inicializarcomponentes(){
         imguser = findViewById(R.id.imgUsuarioPerfil);
         nomuser = findViewById(R.id.txtNomeUsuarioPerfil);
-        idadeuser = findViewById(R.id.txtIdadeUsuarioPerfil);
     }
 
     private void inicializarfirebase() {
@@ -75,11 +76,30 @@ public class Activity_Perfil_Usuario extends AppCompatActivity {
 
     //[INICIO RECUPERAR DADOS DO USUARIO]
     private void carregaruser(){
+        DatabaseReference ideiaRef = databaseReference.child("Usuario").child(user.getUid());
+        ideiaRef.addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+                try {
+                    Modelo_Usuario usuario = new Modelo_Usuario();
+                    usuario = dataSnapshot.getValue(Modelo_Usuario.class);
+                    nomuser.setText(usuario.getUsuarioNome());
+                }catch (Exception e){
 
-        if(user!=null){
-            nomuser.setText(user.getEmail());
+                }
 
-        }
+            }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError databaseError) {
+
+            }
+        });
+
+       // if(user!=null){
+           // nomuser.setText(user.getEmail());
+
+       // }
         //Picasso.get()
           //      .load(user.getPhotoUrl())
             //    .resize(50,50)

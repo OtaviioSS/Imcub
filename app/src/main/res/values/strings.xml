@@ -12,23 +12,33 @@
     <string name="xx_xxxxx_xxxx">(XX) XXXXX-XXXX</string>
     <string name="email_imcub_com_br">   email@imcub.com.br</string>
     <string name="idade_usuario">Idade Usuario</string>
-    <string name="senha">  senha</string>
+    <string name="senha"> Senha</string>
     <string name="entrar">ENTRAR</string>
     <string name="esqueci_a_senha">Esqueceu a senha?</string>
-    <string name="registre_se">Acredite!  Registre-se!</string>
+    <string name="registre_se">Ainda não tem conta?
+        REGISTRE-SE!</string>
     <string name="ou_use_suas_redes">OU USE SUAS REDES</string>
     <string name="google">GOOGLE</string>
     <string name="editar">Editar</string>
     <string name="excluir">Excluir</string>
     <string name="salvar">Salvar</string>
-    <string name="voc_receber_um_e_mail_com_link_para_alterar_sua_senha_verifique_seu_e_mail">Você receberá um e-mail com link para alterar sua senha, verifique seu e-mail.</string>
+    <string name="linkRec">Informe o seu e-mail, enviaremos uma mensagem com instruções para você alterar sua senha.</string>
     <string name="recupera_o_de_senha">Recuperação de Senha</string>
     <string name="enviar">Enviar</string>
     <string name="facebook_app_id">461431761466924</string>
     <string name="fb_login_protocol_scheme">fb461431761466924</string>
-    <string name="publicar_nova_ideia">Publicar Nova Ideia</string>
+    <string name="publicar_nova_ideia">Criar Ideia</string>
     <string name="titulo">Titulo</string>
     <string name="whastapp">WhastApp</string>
     <string name="email_email_com">email@email.com</string>
+    <string name="minhas_ideias">Minhas Ideias</string>
+    <string name="email">Email</string>
+    <string name="_00_00_0000">00/00/0000</string>
+    <string name="swot">SWOT</string>
+    <string name="canvas">Canvas</string>
+    <string name="swotforca">FORÇAS (STRENGTHS) Aqui deve constar as vantagens que o seu negócio possui em relação aos concorrentes ou o seu mesmo segmento de mercado Ex: exclusividade em produtos.</string>
+    <string name="swotfraqueza">FRAQUEZAS (WEAKENESSES) Aqui você deve destacar os pontosnegativos relativos ao quadrante anterior, ou seja, é preciso entender quais e quantos problemas que sua empresa tem em relação á concorrrencia.</string>
+    <string name="swotoportunidades">OPORTUNIDADES (OPPORTUNITIES) Aqui deve constar os fatores externos que influenciam positivamente o seu negócio.</string>
+    <string name="swotameaças">AMEAÇAS (THREATS) Aqui estarão os fatores externo que comprometem o crescimento do seu negócio. É importante analisar o cenário econômico, a fim de prevenir situações futuras criando modos para aproveitar as oportunidades e reduzir riscos e perdas.</string>
 
 </resources>

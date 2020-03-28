@@ -158,6 +158,7 @@ public class MainActivity extends AppCompatActivity {
                     if(task.isSuccessful()){
                         Intent intent = new Intent(MainActivity.this, Activity_Inicio.class);
                         startActivity(intent);
+                        finish();
                         intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK| Intent.FLAG_ACTIVITY_NEW_TASK);
                     }else{
                         Toast.makeText(MainActivity.this,"Erro ao efetuar login",Toast.LENGTH_SHORT).show();
@@ -180,99 +181,4 @@ public class MainActivity extends AppCompatActivity {
 
 
 
-
-
-/*
-    public void  updateUI(GoogleSignInAccount account){
-        if(account != null ){
-            Toast.makeText(this,"U Signed In successfully",Toast.LENGTH_LONG).show();
-            startActivity(new Intent(this,Activity_Inicio.class));
-        }else {
-            Toast.makeText(this,"U Didnt signed in",Toast.LENGTH_LONG).show();
-        }
-    }
-    @Override
-    protected void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
-        super.onActivityResult(requestCode, resultCode, data);
-        if (requestCode == RC_SIGN_IN) {
-            Toast.makeText(MainActivity.this,"onActivityResult",Toast.LENGTH_LONG).show();
-            Task<GoogleSignInAccount> task = GoogleSignIn.getSignedInAccountFromIntent(data);
-            Intent intent = new Intent(MainActivity.this,Activity_Inicio.class);
-            startActivity(intent);
-            Toast.makeText(this,"Seja bem vindo!",Toast.LENGTH_LONG).show();
-            handleSignInResult(task);
-
-        }
-
-    }
-    public void setUpGoogleApiClient(){
-        Toast.makeText(MainActivity.this,"Teste4",Toast.LENGTH_LONG).show();
-        GoogleSignInOptions gso = new GoogleSignInOptions.Builder(GoogleSignInOptions.DEFAULT_SIGN_IN)
-                .requestEmail()
-                .build();
-                mGoogleSignInClient = GoogleSignIn.getClient(this, gso);
-    }
-    View.OnClickListener cliquegoogle = new View.OnClickListener() {
-        @Override
-        public void onClick(View v) {
-            switch (v.getId()) {
-                case R.id.sign_in_button:
-                    signIn();
-                    break;
-            }
-        }
-    };
-    private void signIn() {
-        Intent signInIntent = mGoogleSignInClient.getSignInIntent();
-        startActivityForResult(signInIntent, RC_SIGN_IN);
-        Toast.makeText(MainActivity.this,"Teste2",Toast.LENGTH_LONG).show();
-
-    }
-    public void handleSignInResult(Task<GoogleSignInAccount> completedTask) {
-        try {
-            Toast.makeText(MainActivity.this,"Teste1",Toast.LENGTH_LONG).show();
-
-            GoogleSignInAccount account = completedTask.getResult(ApiException.class);
-            updateUI(account);
-        } catch (ApiException e) {
-            Log.w(TAG, "signInResult:failed code=" + e.getStatusCode());
-            updateUI(null);
-        }
-    }
-
-    private void signInCredential(AuthCredential credential) {
-        mAuth.signInWithCredential(credential)
-                .addOnCompleteListener(this, new OnCompleteListener<AuthResult>() {
-                    @Override
-                    public void onComplete(@NonNull Task<AuthResult> task) {
-                        if(task.isSuccessful()){
-                            FirebaseUser usuario = mAuth.getCurrentUser();
-                            Intent intent = new Intent(MainActivity.this,Activity_Inicio.class);
-                            startActivity(intent);
-                        }else{
-                            Toast.makeText(MainActivity.this,"O login Falhou",Toast.LENGTH_LONG).show();
-                        }
-                    }
-                });
-    }
-    private void firebaseAuthWithGoogle(final GoogleSignInAccount acct) {
-        Log.d(TAG, "firebaseAuthWithGoogle:" + acct.getId());
-        AuthCredential credential = GoogleAuthProvider.getCredential(acct.getIdToken(), null);
-        mAuth.signInWithCredential(credential)
-                .addOnCompleteListener(this, new OnCompleteListener<AuthResult>() {
-                    @Override
-                    public void onComplete(@NonNull Task<AuthResult> task) {
-                        if (task.isSuccessful()) {
-                            Toast.makeText(MainActivity.this,"Teste",Toast.LENGTH_LONG).show();
-                            Log.d(TAG, "signInWithCredential:success");
-                            FirebaseUser user = mAuth.getCurrentUser();
-                            updateUI(acct);
-                        } else {
-                            Log.w(TAG, "signInWithCredential:failure", task.getException());
-                            updateUI(null);
-                        }
-
-                    }
-                });
-    }*/
 }

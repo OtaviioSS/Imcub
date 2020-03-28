@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context="com.imcub.imcubApp.Activity_Perfil_Usuario"
-    android:background="#9900ff"
+    android:background="@drawable/telas_background"
     >
 
 
@@ -14,8 +14,8 @@
         android:layout_width="150dp"
         android:layout_height="150dp"
         android:layout_gravity="center"
-        android:layout_marginTop="50dp"
-        android:background="@drawable/btnredondo"
+        android:layout_marginTop="100dp"
+        android:background="@drawable/btnredondocinza"
         android:src="@drawable/ic_person_black_24dp"
         app:layout_constraintBottom_toTopOf="@id/txtNomeUsuarioPerfil"
         app:layout_constraintEnd_toEndOf="parent"
@@ -23,60 +23,58 @@
         app:layout_constraintTop_toTopOf="parent"
         tools:ignore="ContentDescription" />
 
+    <de.hdodenhof.circleimageview.CircleImageView
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:src="@drawable/ic_photo_camera_black_24dp"
+        android:padding="10dp"
+        app:layout_constraintEnd_toEndOf="@id/imgUsuarioPerfil"
+        app:layout_constraintBottom_toBottomOf="@id/imgUsuarioPerfil"
+        android:background="@drawable/botaoshape"
+
+        />
+
     <TextView
         android:id="@+id/txtNomeUsuarioPerfil"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        app:layout_constraintTop_toBottomOf="@+id/imgUsuarioPerfil"
-        app:layout_constraintBottom_toTopOf="@id/txtIdadeUsuarioPerfil"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        android:layout_marginTop="10dp"
+        android:layout_marginBottom="50dp"
         android:text="@string/nome_de_usuario"
         android:textColor="@android:color/white"
         android:textSize="24sp"
-         />
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/imgUsuarioPerfil"
+        app:layout_constraintBottom_toTopOf="@id/recyclerIdeiasPerfil"
+        />
+
 
     <TextView
-        android:id="@+id/txtIdadeUsuarioPerfil"
+        android:id="@+id/txtminhasIdeias"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/txtNomeUsuarioPerfil"
+        app:layout_constraintStart_toStartOf="@id/recyclerIdeiasPerfil"
         app:layout_constraintBottom_toTopOf="@id/recyclerIdeiasPerfil"
-        android:layout_marginTop="10dp"
-        android:textColor="@android:color/white"
-        android:textSize="16sp"
-        android:layout_marginBottom="20dp"
-
+        app:layout_constraintEnd_toEndOf="@id/recyclerIdeiasPerfil"
+        android:text="@string/minhas_ideias"
+        android:textColor="#ffffff"
+        android:textStyle="bold"
+        android:textSize="18sp"
+        android:layout_marginBottom="8dp"
         />
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/recyclerIdeiasPerfil"
-        android:layout_width="match_parent"
-        android:layout_height="200dp"
-        app:layout_constraintStart_toStartOf="parent"
+        android:layout_width="380dp"
+        android:layout_height="120dp"
+        android:layout_marginBottom="100dp"
+        android:background="@drawable/bartext"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/txtIdadeUsuarioPerfil"
-        app:layout_constraintBottom_toTopOf="@id/navegtionPerfil"
-        android:layout_marginBottom="50dp"
-        android:background="@android:color/white"
-        tools:listitem="@layout/activity__perfil__item__view"
-        />
-
-    <com.google.android.material.bottomnavigation.BottomNavigationView
-        android:id="@+id/navegtionPerfil"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/txtNomeUsuarioPerfil"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        android:layout_width="match_parent"
-        android:layout_height="60dp"
-        app:itemTextColor="#666666"
-        app:menu="@menu/menu"
-        android:background="#eeeeee"
-        app:itemIconTint="#666666"
-        app:itemIconSize="35dp"
+        tools:listitem="@layout/activity__perfil__item__view" />
 
-        />
+
 </androidx.constraintlayout.widget.ConstraintLayout>

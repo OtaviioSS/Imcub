@@ -5,57 +5,46 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context="com.imcub.imcubApp.Activity_RecuperarConta"
-    android:background="#9900ff"
+    android:background="@drawable/telas_background"
     >
 
 
-    <ImageView
-        android:id="@+id/iconRecuperarConta"
+    <View
+        android:id="@+id/topoRec"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:src="@drawable/ic_padlock"
-        app:layout_constraintTop_toTopOf="parent"
+        android:layout_height="200dp"
+        android:background="@drawable/topomont"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintBottom_toTopOf="@+id/txtTituloRecuperarConta"
-        android:layout_marginTop="30dp"
+        app:layout_constraintTop_toTopOf="parent"
         />
 
-    <TextView
-        android:id="@+id/txtTituloRecuperarConta"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="10dp"
-        android:fontFamily="@font/aileron_bold"
-        android:shadowColor="#000000"
-        android:shadowDx="1"
-        android:shadowDy="100"
-        android:shadowRadius="10"
-        android:text="@string/recupera_o_de_senha"
-        android:textColor="#ffffff"
-        android:textSize="28sp"
-        android:textStyle="bold"
-        app:layout_constraintBottom_toTopOf="@id/txtlinkRecuperarConta"
+    <ImageView
+        android:id="@+id/iconRecuperarConta"
+        android:layout_width="150dp"
+        android:layout_height="150dp"
+        android:layout_marginTop="30dp"
+        android:src="@drawable/ic_padlock"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-
-        app:layout_constraintTop_toBottomOf="@+id/iconRecuperarConta" />
+        app:layout_constraintTop_toBottomOf="@+id/topoRec" />
 
     <TextView
         android:id="@+id/txtlinkRecuperarConta"
         android:layout_width="400dp"
         android:layout_height="wrap_content"
-        android:layout_marginTop="10dp"
-        android:layout_marginBottom="30dp"
+        android:layout_marginTop="15dp"
+        android:layout_marginBottom="10dp"
         android:fontFamily="@font/aileron_light"
-        android:text="@string/voc_receber_um_e_mail_com_link_para_alterar_sua_senha_verifique_seu_e_mail"
+        android:text="@string/linkRec"
         android:textAlignment="center"
         android:textColor="@android:color/white"
-        android:textSize="14sp"
+        android:textSize="20sp"
+        android:textStyle="bold"
         app:layout_constraintBottom_toTopOf="@+id/barEmailRecuperarConta"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/txtTituloRecuperarConta" />
+        app:layout_constraintTop_toBottomOf="@id/iconRecuperarConta" />
 
     <EditText
         android:id="@+id/barEmailRecuperarConta"
@@ -70,8 +59,9 @@
         android:hint="@string/email_imcub_com_br"
         android:inputType="textEmailAddress"
         android:padding="10dp"
-        android:textColor="@android:color/white"
-        android:textColorHint="#ffffff"
+        android:textColor="#8800ee"
+        android:textColorHint="#9977ff"
+        android:drawableTint="#8800ee"
         android:textSize="14sp"
         app:layout_constraintBottom_toTopOf="@+id/btnEnviarRecuperarConta"
         app:layout_constraintEnd_toEndOf="parent"
@@ -81,11 +71,11 @@
 
     <Button
         android:id="@+id/btnEnviarRecuperarConta"
-        android:layout_width="200dp"
+        android:layout_width="150dp"
         android:layout_height="40dp"
         android:layout_marginTop="20dp"
         android:minHeight="48dp"
-        android:layout_marginBottom="100dp"
+        android:layout_marginBottom="20dp"
         android:background="@drawable/botaoshape"
         android:fontFamily="@font/aileron_bold"
         android:text="@string/enviar"
@@ -94,9 +84,6 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-
-
-
         app:layout_constraintTop_toBottomOf="@+id/barEmailRecuperarConta" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
